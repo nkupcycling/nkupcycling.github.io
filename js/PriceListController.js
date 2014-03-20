@@ -9,7 +9,7 @@ function PriceListController ($scope) {
                 {
                     desc : 'Set of three glitter tea light holders in an organza bag ( includes three tea lights )',
                     price : 2.5,
-                    disc : 15.0,
+                    disc : 0.0,
                     img : ''
                 },
                 {
