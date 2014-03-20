@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html ng-app lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Upcycling">
+    <meta name="author" content="Niamh Eldridge-Barry">
+
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <title>Upcycling</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+
+    <style>
+        .price-discount {
+            color: darkred;
+        }
+    </style>
+
+</head>
+
+    <body>
+
+        <!-- Navbar -->
+
+        <div class="navbar-wrapper">
+            <div class="container">
+
+                <div class="navbar navbar-static-top" role="navigation">
+                    <div class="container">
+
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+
+                            <!-- Branding -->
+
+                            <a class="navbar-brand" href="#">N&amp;K Upcycling</a>
+
+                        </div>
+
+                        <div class="navbar-collapse collapse">
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="#gallery">Gallery</a>
+                                </li>
+                                <li>
+                                    <a href="#prices">Prices</a>
+                                </li>
+                                <li>
+                                    <a href="https://www.facebook.com/pages/N-K-Up-cycling-/1424687331112422" target="_blank">Facebook</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--
+        ==================================================
+        Carousel
+        ==================================================
+        -->
+        <div ng-controller="CarouselController" id="myCarousel" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+
+            <ol class="carousel-indicators">
+                <li ng-repeat="slide in Slides" data-target="#myCarousel" data-slide-to="{{$index}}"  ng-class="{active: $index==0}"></li>
+            </ol>
+
+            <!-- Slides -->
+
+            <div class="carousel-inner">
+
+                <div ng-repeat="slide in Slides" class="item" ng-class="{active: $index==0}">
+                    <div style="text-align: center">
+                        <img data-src="{{slide.img}}" src="{{slide.img}}" style="max-width: 900; max-height: 500;" alt="Slide {{$index + 1}}">
+                    </div>
+                    <div class="container">
+                        <div class="carousel-caption">
+                            <h1>{{slide.h1}}</h1>
+                            <p>{{slide.p}}</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Navigation Chevrons -->
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+
+        </div>
+
+        <div class="container">
+            <blockquote>
+                <p>"Upcycling is designed to work in opposition to consumer culture, encouraging people to think of new and innovative ways to use things, instead of simply buying new consumer goods. It also benefits the environment, by promoting reuse over discarding whenever possible."</p>
+                <footer>Wisegeek</footer>
+            </blockquote>
+        </div>
+
+        <!-- Price List -->
+        <div id="prices" class="container">
+            <div class="center-block">
+                <h1 style="text-align: center">Price List</h1>
+            </div>
+
+            <div ng-controller="PriceListController">
+
+                <table class="table table-hover table-responsive" ng-repeat="collection in Products | orderBy:collection.sort">
+                    <thead>
+                    <tr>
+                        <td>
+                            <h4>
+                                {{collection.title | uppercase}}
+                            </h4>
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="item in collection.items">
+                        <td style="width:80%">
+                            <span ng-show="item.disc!==0.0" class="label label-danger">SALE</span>
+                            {{item.desc}}
+                            <!--
+                            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Click for a picture</button>
+                            -->
+                        </td>
+                        <td ng-show="item.disc===0.0" style="text-align: right">{{item.price | currency : "€"}}</td>
+                        <td ng-show="item.disc!==0.0" style="text-align: right">
+                            <span style="text-decoration: line-through; font-weight: lighter"> {{item.price | currency : "€"}}</span>
+                            &nbsp;
+                            <span class="price-discount">{{item.price-(item.price/100*item.disc) | currency : "€"}}</span>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!--
+            Gallery
+        -->
+
+        <div id="gallery" ng-controller="GalleryController" class="container marketing">
+
+            <div class="center-block">
+                <h1 style="text-align: center">Gallery</h1>
+            </div>
+
+            <!-- Three columns of text below the carousel -->
+            <div class="row" >
+
+                <div class="col-lg-4" ng-repeat="item in Gallery">
+                    <img class="img-circle" data-src="{{item.img}}" alt="Generic placeholder image">
+                    <h3>{{item.title}}</h3>
+                    <p>{{item.desc}}</p>
+                </div><!-- /.col-lg-4 -->
+
+            </div><!-- /.row -->
+
+        </div>
+
+
+
+        <!-- FOOTER -->
+        <br>
+        <br>
+        <div class="container">
+            <footer>
+                <p class="pull-right"><a href="#">Back to top</a></p>
+                <p>&copy; Niamh Eldridge-Barry, 2014 </p>
+            </footer>
+
+        </div>
+
+
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/docs.min.js"></script>
+        <script src="js/CarouselController.js"></script>
+        <script src="js/FeaturetteController.js"></script>
+        <script src="js/PriceListController.js"></script>
+        <script src="js/GalleryController.js"></script>
+    </body>
+</html>
