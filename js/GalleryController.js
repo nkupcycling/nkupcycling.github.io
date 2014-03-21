@@ -1,7 +1,7 @@
 
 function GalleryController ($scope) {
 
-    $scope.Gallery = [
+    var gallery = [
         {
             img : 'images/gallery/1.jpg',
             title : 'Pink Handwriting',
@@ -25,7 +25,7 @@ function GalleryController ($scope) {
         {
             img : 'images/gallery/5.jpg',
             title : 'Flower',
-            desc : 'Lorem ipsum...'
+            desc : ''
         },
         {
             img : 'images/gallery/6.jpg',
@@ -54,5 +54,7 @@ function GalleryController ($scope) {
         }
 
     ];
+
+    $scope.Gallery = _.shuffle(gallery);
 
 }
