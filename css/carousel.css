@@ -7,6 +7,9 @@ body {
     color: #5a5a5a;
 }
 
+.footer {
+    background-color: #232323;
+}
 
 
 
@@ -156,3 +159,5 @@ body {
 h1 {
     margin-bottom: 50px;
 }
+
+

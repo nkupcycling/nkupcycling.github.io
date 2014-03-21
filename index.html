@@ -7,9 +7,9 @@
     <meta name="description" content="Upcycling">
     <meta name="author" content="Niamh Eldridge-Barry">
 
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="shortcut icon" href="favicon.png">
 
-    <title>Upcycling</title>
+    <title>N&K Upcycling</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -28,6 +28,9 @@
     <style>
         .price-discount {
             color: darkred;
+        }
+        .sold-out {
+            text-decoration: line-through;
         }
     </style>
 
@@ -53,7 +56,7 @@
 
                             <!-- Branding -->
 
-                            <a class="navbar-brand" href="#">N&amp;K Upcycling</a>
+                            <a class="navbar-brand" href="#">#nkupcycling</a>
 
                         </div>
 
@@ -109,8 +112,8 @@
 
             <!-- Navigation Chevrons -->
 
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span style="color: black;" class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span style="color: black;" class="glyphicon glyphicon-chevron-right"></span></a>
 
         </div>
 
@@ -129,7 +132,7 @@
 
             <div ng-controller="PriceListController">
 
-                <table class="table table-hover table-responsive" ng-repeat="collection in Products | orderBy:collection.sort">
+                <table class="table table-hover table-responsive" ng-repeat="collection in Products">
                     <thead>
                     <tr>
                         <td>
@@ -143,12 +146,13 @@
                     <tr ng-repeat="item in collection.items">
                         <td style="width:80%">
                             <span ng-show="item.disc!==0.0" class="label label-danger">SALE</span>
-                            {{item.desc}}
+                            <span ng-show="item.available===false" class="label label-default">SOLD OUT</span>
+                            <span ng-class="{'sold-out': item.available == false}">{{item.desc}}</span>
                             <!--
                             <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Click for a picture</button>
                             -->
                         </td>
-                        <td ng-show="item.disc===0.0" style="text-align: right">{{item.price | currency : "€"}}</td>
+                        <td ng-show="item.disc===0.0" style="text-align: right" ng-class="{'sold-out': item.available == false}">{{item.price | currency : "€"}}</td>
                         <td ng-show="item.disc!==0.0" style="text-align: right">
                             <span style="text-decoration: line-through; font-weight: lighter"> {{item.price | currency : "€"}}</span>
                             &nbsp;
@@ -179,10 +183,11 @@
             <div class="row" >
 
                 <div class="col-lg-4" ng-repeat="item in Gallery">
-                    <img class="img-circle" data-src="{{item.img}}" alt="Generic placeholder image">
-                    <h3>{{item.title}}</h3>
+                    <img class="img-circle" data-src="{{item.img}}" src="{{item.img}}" alt="Generic placeholder image">
+                     <h3>{{item.title}}</h3>
                     <p>{{item.desc}}</p>
-                </div><!-- /.col-lg-4 -->
+
+                </div>
 
             </div><!-- /.row -->
 
@@ -193,20 +198,36 @@
         <!-- FOOTER -->
         <br>
         <br>
+        <br>
         <div class="container">
-            <footer>
-                <p class="pull-right"><a href="#">Back to top</a></p>
-                <p>&copy; N&amp;K Upcycling, 2014 </p>
-            </footer>
-
+            <p class="pull-right"><a href="#">Back to top</a></p>
+        </div>
+        <div class="footer">
+            <div class="container footer">
+                <footer>
+                    <br />
+                    <p style="text-align: center">&copy; N&amp;K Upcycling, 2014. All Rights Reserved. </p>
+                    <br />
+                </footer>
+            </div>
         </div>
 
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+            ga('create', 'UA-49238191-1');
+            ga('send', 'pageview');
+        </script>
 
 
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/underscore-min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/docs.min.js"></script>
@@ -214,5 +235,6 @@
         <script src="js/FeaturetteController.js"></script>
         <script src="js/PriceListController.js"></script>
         <script src="js/GalleryController.js"></script>
+
     </body>
 </html>
