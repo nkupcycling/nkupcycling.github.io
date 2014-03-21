@@ -1,6 +1,6 @@
 function CarouselController ($scope) {
 
-    $scope.Slides = [
+    var slides = [
         {
             img     : "images/Amethyst.jpg",
             h1      : "Upcycling",
@@ -20,6 +20,6 @@ function CarouselController ($scope) {
     ];
 
 
-
+    $scope.Slides = _.shuffle (slides);
 
 }
