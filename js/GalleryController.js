@@ -1,5 +1,5 @@
 
-function GalleryController ($scope) {
+function GalleryController ($scope, $timeout) {
 
     var gallery = [
         {
@@ -71,5 +71,12 @@ function GalleryController ($scope) {
     ];
 
     $scope.Gallery = _.shuffle(gallery);
+
+    var shuffleAbout = function () {
+        $scope.Gallery = _.shuffle(gallery);
+        $timeout (shuffleAbout, 10000);
+    }
+
+    $timeout (shuffleAbout, 10000);
 
 }
