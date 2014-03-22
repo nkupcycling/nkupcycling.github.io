@@ -15,6 +15,11 @@ function CarouselController ($scope) {
             img     : "images/Sapphire.jpg", // /home/jeff/Desktop/Upcycling/images/products/IMG_0451.JPG
             h1      : "Available in different colours",
             p       : "Amethyst, Sapphire or Emerald"
+        },
+        {
+            img     : 'images/SetOf3.jpg',
+            h1      : 'Tea lights and holders',
+            p       : 'Set of 3 in an organza gift bag'
         }
 
     ];

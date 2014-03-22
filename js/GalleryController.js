@@ -51,6 +51,21 @@ function GalleryController ($scope) {
             img : 'images/gallery/10.jpg',
             title : 'Large Candle Holder',
             desc : 'Perfect for the dinner table'
+        },
+        {
+            img : 'images/gallery/11.jpg',
+            title : 'Lavender Bags',
+            desc : 'Available individually or in a gift set'
+        },
+        {
+            img : 'images/gallery/12.jpg',
+            title : 'Large Candle Stick Holders',
+            desc : 'Available in a variety of textures'
+        },
+        {
+            img : 'images/gallery/13.jpg',
+            title : 'Lavender Bag Gift Set',
+            desc : 'Three in an organza gift bag'
         }
 
     ];
