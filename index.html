@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Upcycling">
+    <meta name="description" content="Offical site for N&K Upcycling">
     <meta name="author" content="Niamh Eldridge-Barry">
 
     <link rel="shortcut icon" href="favicon.png">
@@ -26,13 +26,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
 
     <style>
-        .price-discount {
-            color: darkred;
-        }
-        .sold-out {
-            text-decoration: line-through;
-        }
+
     </style>
+
 
 </head>
 
@@ -56,12 +52,15 @@
 
                             <!-- Branding -->
 
-                            <a class="navbar-brand" href="#">#nkupcycling</a>
+                            <a class="navbar-brand" href="#">N&amp;K Upcycling</a>
 
                         </div>
 
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="#about">About</a>
+                                </li>
                                 <li>
                                     <a href="#gallery">Gallery</a>
                                 </li>
@@ -69,10 +68,18 @@
                                     <a href="#prices">Prices</a>
                                 </li>
                                 <li>
-                                    <a href="https://www.facebook.com/pages/N-K-Up-cycling-/1424687331112422" target="_blank">Facebook</a>
+                                    <a href="https://www.facebook.com/pages/N-K-Up-cycling-/1424687331112422" target="_blank">
+                                        <img style="margin-top: -8px" src="images/social/FB-f-Logo__blue_29.png">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="https://www.twitter.com/nkupcycling" target="_blank">
+                                        <img src="images/social/Twitter_logo_blue.png" style="width: 32px; margin-top: -4px">
+                                    </a>
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -98,7 +105,7 @@
 
                 <div ng-repeat="slide in Slides" class="item" ng-class="{active: $index==0}">
                     <div style="text-align: center">
-                        <img data-src="{{slide.img}}" src="{{slide.img}}" style="max-width: 900; max-height: 500;" alt="Slide {{$index + 1}}">
+                        <img class="img-responsive center-block" data-src="{{slide.img}}" src="{{slide.img}}" style="max-width: 900; max-height: 500;" alt="Slide {{$index + 1}}">
                     </div>
                     <div class="container">
                         <div class="carousel-caption">
@@ -112,16 +119,37 @@
 
             <!-- Navigation Chevrons -->
 
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span style="color: black;" class="glyphicon glyphicon-chevron-left"></span></a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span style="color: black;" class="glyphicon glyphicon-chevron-right"></span></a>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span style="color: #232323;" class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next"><span style="color: #232323;" class="glyphicon glyphicon-chevron-right"></span></a>
 
         </div>
 
-        <div class="container">
+        <div id="about" class="container jumbotron">
+            <h1 class="center-block">About N&K Upcycling</h1>
+            <p>
+                We are Niamh and Ksenia, “Transition Year Students”. We have based our company on
+                the idea of Up-Cycling. This means we have taken every day objects and re-purposed
+                them for new uses. For example a jam jar is transformed into a glitter vase or a wine
+                bottle into a dinner candle holder. We hope you like our range of products which are
+                reasonably priced and are helping to save the environment.
+            </p>
+            <p>
+                If you would like to buy any of our products please get in touch with us by emailing
+                <a href="mailto:nkupcycling@gmail.com">nkupcycling@gmail.com</a>. We are based at <a href="http://www.phcol.ie" target="_blank">Pipers Hill College</a>
+                but can also arrange local delivery in the <a href="http://goo.gl/maps/1TvKL" target="_blank">Naas, Rathmore and Sallins</a> areas.
+            </p>
+            <p>
+                Thank you for visiting our page.
+            </p>
             <blockquote>
                 <p>"Upcycling is designed to work in opposition to consumer culture, encouraging people to think of new and innovative ways to use things, instead of simply buying new consumer goods. It also benefits the environment, by promoting reuse over discarding whenever possible."</p>
                 <footer>Wisegeek</footer>
             </blockquote>
+
+        </div>
+
+
+        <div class="container">
         </div>
 
         <!-- Price List -->
