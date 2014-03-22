@@ -13,8 +13,14 @@ body {
 }
 
 
+blockquote {
+    border-left: 5px solid #727272;
+    font-style: italic;
+}
 
-
+footer {
+    font-style: normal;
+}
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
@@ -162,4 +168,9 @@ h1 {
     margin-bottom: 50px;
 }
 
-
+.price-discount {
+    color: darkred;
+}
+.sold-out {
+    text-decoration: line-through;
+}
