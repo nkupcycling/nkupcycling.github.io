@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app lang="en">
+<html ng-app="ngAnimate" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +24,8 @@
     <link href="css/carousel.css" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.13/angular-animate.min.js"></script>
+
 
     <style>
 
@@ -207,7 +209,7 @@
             <!-- Three columns of text below the carousel -->
             <div class="row" >
 
-                <div class="col-lg-4" ng-repeat="item in Gallery">
+                <div class="col-lg-4 repeated-item" ng-repeat="item in Gallery" >
                     <img class="img-circle" data-src="{{item.img}}" src="{{item.img}}" alt="Generic placeholder image">
                      <h3>{{item.title}}</h3>
                     <p>{{item.desc}}</p>
@@ -252,6 +254,7 @@
         <!-- Bootstrap core JavaScript
         ================================================== -->
         <!-- Placed at the end of the document so the pages load faster -->
+
         <script src="js/underscore-min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
