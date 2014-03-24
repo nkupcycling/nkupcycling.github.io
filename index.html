@@ -93,7 +93,7 @@
         Carousel
         ==================================================
         -->
-        <div ng-controller="CarouselController" id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div ng-cloak ng-controller="CarouselController" id="myCarousel" class="carousel slide" data-ride="carousel">
 
             <!-- Indicators -->
 
@@ -150,17 +150,13 @@
 
         </div>
 
-
-        <div class="container">
-        </div>
-
         <!-- Price List -->
         <div id="prices" class="container">
             <div class="center-block">
                 <h1 style="text-align: center">Price List</h1>
             </div>
 
-            <div ng-controller="PriceListController">
+            <div ng-cloak ng-controller="PriceListController">
 
                 <table class="table table-hover table-responsive" ng-repeat="collection in Products">
                     <thead>
@@ -209,7 +205,7 @@
             <!-- Three columns of text below the carousel -->
             <div class="row" >
 
-                <div class="col-lg-4 repeated-item" ng-repeat="item in Gallery" >
+                <div ng-cloak class="col-lg-4 repeated-item" ng-repeat="item in Gallery" >
                     <img class="img-circle" data-src="{{item.img}}" src="{{item.img}}" alt="Generic placeholder image">
                      <h3>{{item.title}}</h3>
                     <p>{{item.desc}}</p>
