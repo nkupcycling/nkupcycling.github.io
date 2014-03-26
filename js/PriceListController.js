@@ -11,7 +11,7 @@ function PriceListController ($scope) {
                     price : 2.5,
                     disc : 0.0,
                     img : '',
-                    available : true    // Add this property (set to false) to mark items as sold out
+                    available : false    // Add this property (set to false) to mark items as sold out
                 },
                 {
                     desc : 'Candle holders',
@@ -60,13 +60,15 @@ function PriceListController ($scope) {
                     desc : 'Purple Heart',
                     price : 1.50,
                     disc : 0.0,
-                    img : ''
+                    img : '',
+                    notAvailableToOrder : false
                 },
                 {
                     desc : 'Material flowers',
                     price : 2.00,
                     disc : 0.0,
-                    img : ''
+                    img : '',
+                    available : false    // Add this property (set to false) to mark items as sold out
                 },
                 {
                     desc : 'Pink handwriting',
@@ -97,13 +99,15 @@ function PriceListController ($scope) {
                     desc : 'Set of two dinner candle holders',
                     price : 2.50,
                     disc : 0.0,
-                    img : ''
+                    img : '',
+                    notAvailableToOrder : false
                 },
                 {
                     desc : 'Large candle holder',
                     price : 2.0,
                     disc : 0.0,
-                    img : ''
+                    img : '',
+                    notAvailableToOrder : false
                 },
                 {
                     desc : 'Coin tray',

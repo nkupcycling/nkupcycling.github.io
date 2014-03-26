@@ -182,6 +182,7 @@
                             <span ng-show="item.disc!==0.0" class="label label-danger">SALE</span>
                             <span ng-show="item.available===false" class="label label-default">SOLD OUT</span>
                             <span ng-class="{'sold-out': item.available == false}">{{item.desc}}</span>
+                            <span ng-show="item.notAvailableToOrder===false" class="label label-warning">AVAILABLE TO ORDER</span>
                         </td>
                         <td ng-show="item.disc===0.0" style="text-align: right" ng-class="{'sold-out': item.available == false}">{{item.price | currency : "€"}}</td>
                         <td ng-show="item.disc!==0.0" style="text-align: right">
