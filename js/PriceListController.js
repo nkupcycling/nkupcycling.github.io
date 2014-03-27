@@ -126,13 +126,15 @@ function PriceListController ($scope) {
                     desc : 'Lavender bag',
                     price : 1.0,
                     disc : 0.0,
-                    img : ''
+                    img : '',
+                    available : false
                 },
                 {
                     desc : 'Set of 3 lavender bags in a organza gift bag',
                     price : 3.00,
                     disc : 0.0,
-                    img : ''
+                    img : '',
+                    available : false
                 }
             ]
         }
