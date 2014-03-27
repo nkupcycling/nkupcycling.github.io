@@ -23,7 +23,8 @@ function PriceListController ($scope) {
                     desc : 'Dipped candle holders',
                     price : 1.00,
                     disc : 0.0,
-                    img : ''
+                    img : '',
+                    notAvailableToOrder: false
                 },
                 {
                     desc : 'Glitter stem vase',
@@ -74,7 +75,8 @@ function PriceListController ($scope) {
                     desc : 'Pink handwriting',
                     price : 1.50,
                     disc : 0.0,
-                    img : ''
+                    img : '',
+                    available : false
                 },
                 {
                     desc : 'Purple and pink flowers',
