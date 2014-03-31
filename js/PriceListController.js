@@ -1,4 +1,3 @@
-
 function PriceListController ($scope) {
 
     $scope.Products = [
@@ -7,11 +6,11 @@ function PriceListController ($scope) {
             sort : 100,
             items : [
                 {
-                    desc : 'Set of three glitter tea light holders in an organza bag ( includes three tea lights )',
-                    price : 2.5,
+                    desc : 'Set of three glitter tea light holders in an organza bag (includes three tea lights). Available in blue, pink and green.',
+                    price : 3.0,
                     disc : 0.0,
                     img : '',
-                    available : false    // Add this property (set to false) to mark items as sold out
+                    notAvailableToOrder : false    // Add this property (set to false) to mark items as sold out
                 },
                 {
                     desc : 'Candle holders',
@@ -21,7 +20,7 @@ function PriceListController ($scope) {
                 },
                 {
                     desc : 'Dipped candle holders',
-                    price : 1.00,
+                    price : 1.50,
                     disc : 0.0,
                     img : '',
                     notAvailableToOrder: false
@@ -129,14 +128,14 @@ function PriceListController ($scope) {
                     price : 1.0,
                     disc : 0.0,
                     img : '',
-                    available : false
+                    available : true
                 },
                 {
                     desc : 'Set of 3 lavender bags in a organza gift bag',
                     price : 3.00,
                     disc : 0.0,
                     img : '',
-                    available : false
+                    available : true
                 }
             ]
         }
