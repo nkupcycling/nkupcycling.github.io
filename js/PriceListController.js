@@ -2,6 +2,24 @@ function PriceListController ($scope) {
 
     $scope.Products = [
         {
+            title : 'Easter Specials',
+            sort : 10,
+            items : [
+                {
+                    desc : 'Dipped candle holders in easter gift wrap. Available in pink, blue or green.',
+                    price : 2.0,
+                    disc : 0.0,
+                    img : ''
+                },
+                {
+                    desc : 'Glitter egg cups in easter gift wrap. Available in pink, blue or green.',
+                    price : 1.25,
+                    disc : 0.0,
+                    img : ''
+                },
+            ]
+        },
+        {
             title : 'Glitter',
             sort : 100,
             items : [
